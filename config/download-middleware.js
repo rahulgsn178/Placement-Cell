@@ -23,6 +23,6 @@ module.exports.start = async (req, res) => {
     // console.log(await csv.toString());
     
     return res.download("./downloads/student.csv", () => {
-     fs.unlinkSync("./downloads/student.csv");
+        fs.unlinkSync("./downloads/student.csv");
     });
 }
