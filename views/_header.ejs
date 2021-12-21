@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">PLACEMENT CELL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/dashboard">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/students/form">New Student
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/interview/form">New Interview
+                    </a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link active" href="/download" title="download student data">Download CSV
+                    </a>
+                </li> 
+            </ul>
+
+            <div class="me-sm-2">
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <% if(!locals.user) { %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/register">Sign Up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/login">Login</a>
+                            </li>
+                        <% } else { %>
+                            <li class="nav-item pt-2">
+                                <i class="fa fa-user text-white" aria-hidden="true"></i>
+                                <p class="text-white bg-dark m-auto d-inline-block"><%= user.name %></p>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users/logout">Logout</a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<figure>
+    <blockquote class="blockquote">
+        <p class="mb-0">This is a Placement Cell Web Application. You can add new student, create new interview and also
+            can allot an interview/s to any of those created students.</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+        Rahul Gusain <cite title="Source Title">(Full Stack Node.js Developer)</cite>
+    </figcaption>
+</figure>

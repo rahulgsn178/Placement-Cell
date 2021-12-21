@@ -1,0 +1,60 @@
+<div class="text-center">
+  <div class="container m-0 d-inline-block" style="width: 400px;">
+    <!-- STUDENT LIST -->
+    <!-- <a class="btn btn-primary" href="/questions" role="button">Question</a> -->
+    <div class="card mb-3">
+      <h3 class="card-header">Students </h3>
+      <div class="card-body">
+        <h5 class="card-title">Career Camp</h5>
+        <h6 class="card-subtitle text-muted">Full Stack Web Development Course</h6>
+      </div>
+      
+      <ul class="list-group">
+        <% for(student of students) { %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <%= student.name %>
+
+          <% for(company of student.companies) { %>
+            <% if(company.name === requestedCompany) { %>
+              <span class="badge bg-primary rounded-pill">
+                <%= company.name %>
+              </span>
+
+              <span class="badge bg-primary rounded-pill">
+                <%= company.status %>
+              </span>          
+            <% } %>
+          <% } %>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+  <div class="container m-0 d-inline-block" style="width: 400px;">
+  
+    <!-- INTERVIEW LIST -->
+    <div class="card mb-3">
+      <h3 class="card-header">Interviews </h3>
+      <div class="card-body">
+        <h5 class="card-title">Career Camp</h5>
+        <h6 class="card-subtitle text-muted">Full Stack Web Development Course</h6>
+      </div>
+      
+      <ul class="list-group">
+        <% for(interview of interviews) { %>
+        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          <a href="/<%= interview.company %>">
+            <%= interview.company %>
+          </a>
+          <span class="badge bg-primary rounded-pill">
+            <%= interview.date %>
+          </span>
+        </li>
+        <% } %>
+      </ul>   
+    </div>
+  </div>
+</div>
