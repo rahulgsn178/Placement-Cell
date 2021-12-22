@@ -47,9 +47,9 @@ app.use(flash());
 // Customise middleware
 app.use(customMiddleware.sendMessages);
 
+
 // Routes
 app.get('/download', auth.ensureAuthenticated, downloadMiddleware.start);
-
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/students', require('./routes/students'));
